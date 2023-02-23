@@ -1,0 +1,19 @@
+{
+  "name": "primerospasospoo",
+  "version": "1.0.0",
+  "description": "primeras pruebas de vsc,typescript,npm,poo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eSalazar84/tareasBenitoJuarez.git"
+  },
+  "author": "Emiliano Salazar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eSalazar84/tareasBenitoJuarez/issues"
+  },
+  "homepage": "https://github.com/eSalazar84/tareasBenitoJuarez#readme"
+}

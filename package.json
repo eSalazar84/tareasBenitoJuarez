@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/eSalazar84/tareasBenitoJuarez/issues"
   },
-  "homepage": "https://github.com/eSalazar84/tareasBenitoJuarez#readme"
+  "homepage": "https://github.com/eSalazar84/tareasBenitoJuarez#readme",
+  "dependencies": {
+    "array-sum": "^1.0.0",
+    "count-words-array": "^1.0.13",
+    "readline-sync": "^1.4.10"
+  }
 }

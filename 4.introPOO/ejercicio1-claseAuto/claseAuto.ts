@@ -7,44 +7,56 @@ class Auto {
   // estado de la clase: variables
   private currentSpeed: number = 0;
   private isOn: boolean = false;
-  private fuelLevel: number = 30;
-  private isEmpty: boolean = false;
-  private stopCar: string = `El auto se detuvo`;
+  private brand: string;
+  private fuel: number = 20;
+  private stopCar: string = `Auto detenido`;
+  private speedLimit: string = `¡Alerta de velocidad!`;
   // constructor de la clase
-  constructor (inicialFuel:number){
-    this.fuelLevel= inicialFuel;
+  constructor(brand?: string) {
+    brand ? (this.brand = brand) : (this.brand = `Generic`);
+    this.fuel = 3;
   }
   // funcionalidades de la clase: funciones
+  switchOnOff(): void {
+    this.isOn != this.isOn;
+    console.log(`${this.brand} Car on, check system, ${this.fuel}% fuel`);
+  }
+  showSpeed(): number {
+    return this.currentSpeed;
+  }
   speedUp(): void {
-    this.currentSpeed++;
+    if (this.currentSpeed < 100 && this.fuel > 1) {
+      this.currentSpeed++;
+      this.fuel--;
+      console.log(`${this.showSpeed()}km/h`);
+    } else {
+      this.currentSpeed++;
+      this.fuel--;
+      console.log(`${this.showSpeed()}km/h ${this.speedLimit}`);
+    }
   }
   speedDown(): void {
-    this.currentSpeed--;
-  }
-  private stopedCar(): string | void {
-    if (this.currentSpeed > 0) this.currentSpeed--;
-    console.log(`El auto se detuvo`);
+    if (this.currentSpeed > 1 && this.fuel > 1) {
+      this.currentSpeed--;
+      this.fuel--;
+      console.log(`${this.showSpeed()}km/h`);
+    } else {
+      console.log(this.stopCar);
+    }
+    if (this.currentSpeed > 100) {
+      console.log(`${this.showSpeed()}km/h ${this.speedLimit}`);
+    }
   }
 }
 
-const peugeot: Auto = new Auto(40);
+const peugeot: Auto = new Auto(`Peugeot`);
+peugeot.switchOnOff();
 peugeot.speedUp();
-console.log(peugeot.speedUp(), `subo 1`);
 peugeot.speedUp();
-console.log(peugeot.speedUp(), `subo 2`);
 peugeot.speedUp();
-console.log(peugeot.speedUp(), `subo 3`);
 peugeot.speedUp();
-console.log(peugeot.speedUp(), `subo 4`);
 peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 3`);
 peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 2`);
 peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 1`);
 peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 1`);
 peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 1`);
-peugeot.speedDown();
-console.log(peugeot.speedDown(), `bajo 1`);

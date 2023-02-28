@@ -1,0 +1,4 @@
+Escuela N°1
+Escuela N°3
+Escuela N°10
+Escuela N|11

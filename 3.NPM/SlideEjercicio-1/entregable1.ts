@@ -5,7 +5,11 @@ Subir a GitHub y pasar el link por Slack */
 import * as fs from "fs";
 
 const arraySum = require(`array-sum`);
-const archivoArreglo: string = fs.readFileSync(`entregable1.txt`, `utf-8`);
+const archivoArreglo: string = fs.readFileSync(`./entregable1.txt`, `utf-8`);
+console.log(archivoArreglo);
+console.log(typeof(archivoArreglo));
+
+
 function sumaArray():number{
     const arregloTipoString: string[] = archivoArreglo.split(` `);
     const arregloTipoNumber:number= Number(arraySum(arregloTipoString));

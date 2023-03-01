@@ -8,6 +8,14 @@ Subir a GitHub y avisar por Slack */
 
 import * as fs from "fs";
 
-const nameList= fs.readFileSync(`./nameList.txt`, `utf-8`);
-const schoolList=fs.readFileSync(`./schoolList.txt`, `utf-8`);
+const nameList = fs.readFileSync(`./nameList.txt`, `utf-8`);
+const schoolList = fs.readFileSync(`./schoolList.txt`, `utf-8`);
+
+const arrayNamelist:string[]=nameList.split(` `);
+const arraySchoolList:string[]=schoolList.split(` `);
+
+for (let i = 0; i < arrayNamelist.length; i++) {
+    let vote:string=`${arrayNamelist[i]} va a votar en la ${arraySchoolList[i]}`
+    console.log(vote);
+}
 

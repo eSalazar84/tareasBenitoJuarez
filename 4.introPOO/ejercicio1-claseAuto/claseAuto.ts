@@ -3,25 +3,29 @@ Plantear una clase Auto de la forma en que se vió
 en la clase → especificando variables internas y métodos
 Implementar en TypeScript*/
 
-class Auto {
+export class Auto {
   // estado de la clase: variables
-  private currentSpeed: number = 0;
-  private isOn: boolean = false;
   private brand: string;
-  private fuel: number = 20;
-  private stopCar: string = `Auto detenido`;
-  private speedLimit: string = `¡Alerta de velocidad!`;
+  private model:string;
+  private currentSpeed: number;
+  private year:number;
+  private isOn: boolean;
+  private fuel: number;
   // constructor de la clase
-  constructor(brand?: string) {
-    brand ? (this.brand = brand) : (this.brand = `Generic`);
-    this.fuel = 3;
+  constructor(brand: string, model:string, year?:number) {
+    this.brand = brand
+    this.model = model
+    year ? (this.year = year):(this.year = 2022);
+    this.currentSpeed=0;
+    this.isOn=false;
+    this.fuel=20;
   }
   // funcionalidades de la clase: funciones
   switchOnOff(): void {
     this.isOn != this.isOn;
     console.log(`${this.brand} Car on, check system, ${this.fuel}% fuel`);
   }
-  showSpeed(): number {
+  private showSpeed(): number {
     return this.currentSpeed;
   }
   speedUp(): void {
@@ -32,7 +36,7 @@ class Auto {
     } else {
       this.currentSpeed++;
       this.fuel--;
-      console.log(`${this.showSpeed()}km/h ${this.speedLimit}`);
+      console.log(`${this.showSpeed()}km/h ¡Alerta de velocidad!`);
     }
   }
   speedDown(): void {
@@ -41,15 +45,17 @@ class Auto {
       this.fuel--;
       console.log(`${this.showSpeed()}km/h`);
     } else {
-      console.log(this.stopCar);
+      console.log(`Auto detenido`);
     }
-    if (this.currentSpeed > 100) {
+    /* if (this.currentSpeed > 100) {
       console.log(`${this.showSpeed()}km/h ${this.speedLimit}`);
-    }
+    } */
   }
 }
 
-const peugeot: Auto = new Auto(`Peugeot`);
+const peugeot: Auto = new Auto(`Peugeot`,`206`,2012);
+const ford:Auto=new Auto(`Ford`,`Ecosport`, 2023);
+const fiat:Auto=new Auto(`Ford`,`Palio`)
 peugeot.switchOnOff();
 peugeot.speedUp();
 peugeot.speedUp();
@@ -60,3 +66,8 @@ peugeot.speedDown();
 peugeot.speedDown();
 peugeot.speedDown();
 peugeot.speedDown();
+console.log(peugeot);
+console.log(ford);
+console.log(fiat);
+
+

@@ -5,7 +5,7 @@ Implementar en TypeScript*/
 
 export class Auto {
   // estado de la clase: variables
-  private brand: string;
+  brand: string;
   private model:string;
   private currentSpeed: number;
   private year:number;
@@ -53,7 +53,7 @@ export class Auto {
   }
 }
 
-const peugeot: Auto = new Auto(`Peugeot`,`206`,2012);
+/* const peugeot: Auto = new Auto(`Peugeot`,`206`,2012);
 const ford:Auto=new Auto(`Ford`,`Ecosport`, 2023);
 const fiat:Auto=new Auto(`Ford`,`Palio`)
 peugeot.switchOnOff();
@@ -68,6 +68,5 @@ peugeot.speedDown();
 peugeot.speedDown();
 console.log(peugeot);
 console.log(ford);
-console.log(fiat);
-
+console.log(fiat); */
 

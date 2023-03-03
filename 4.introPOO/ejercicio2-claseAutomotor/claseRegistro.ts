@@ -25,28 +25,33 @@ class RegistroAutomotor {
     }
   }
   consultar(brand: string, array: Auto[]): any {
-    let autoEncontrado = array.find((auto) => auto.brand === brand);
+    let autoEncontrado: Auto | undefined = array.find((auto) => auto.brand === brand);
     if (autoEncontrado) {
-      console.log(`${brand} existe en la biblioteca ${autoEncontrado}`);
-      return autoEncontrado;
+      console.log(`${brand} existe en el Registro.`);
+      //console.table(autoEncontrado);
+      return autoEncontrado
     } else {
-      console.log(`${brand} no existe en la biblioteca`);
+      console.log(`${brand} no existe en el Registro.`);
     }
   }
   modificar(brand: string, array: Auto[], dato: string): void {
-    let autoModificar = this.consultar(brand, array);
+    let autoModificar: Auto | undefined = this.consultar(brand, array);
+    console.log(autoModificar);
+    
     if (autoModificar) {
       autoModificar.brand = dato;
       console.log(
         `El auto ${brand} ha sido modificado y ahora se llama ${dato}`
       );
     } else {
-      console.log("El libro no se ha podido modificar");
+      console.log("El Registro no se ha podido modificar");
     }
   }
   eliminar(brand: string, array: Auto[]): any {
-    const setString:string=brand.toLowerCase();
-    let indexArray:number=array.findIndex((setString)=>setString.brand==brand);
+    const setString: string = brand.toLowerCase();
+    let indexArray: number = array.findIndex(
+      (setString) => setString.brand == brand
+    );
     if (indexArray >= 0) {
       array.splice(indexArray, 1);
       console.log(`Auto eliminado del Registro: ${brand}`);
@@ -64,10 +69,12 @@ const auto_4: Auto = new Auto(`Fiat`, `Palio`, 2000);
 const auto_5: Auto = new Auto(`Citroen`, `Xara`);
 const auto_6: Auto = new Auto(`Wolkswagen`, `Gol`, 2010);
 
-const listadoAutos: any[] = [auto_1, auto_2, auto_3, auto_4, auto_5, auto_6];
+const listadoAutos: Auto[] = [auto_1, auto_2, auto_3, auto_4, auto_5, auto_6];
 const registro: RegistroAutomotor = new RegistroAutomotor();
-//registro.todo(listadoAutos);
 const auto_7: Auto = new Auto(`Ferrari`, `Testarrossa`, 2023);
 registro.insertar(auto_7, listadoAutos);
-//registro.eliminar(`Fiat`, listadoAutos);  //Chequeado y modificado
-registro.modificar(`Wolkswagen`,listadoAutos,`Volkswagen`);
+registro.eliminar(`Fiat`, listadoAutos);  //Chequeado y modificado
+registro.consultar(`Fiat`,listadoAutos);
+registro.modificar(`Wolkswagen`, listadoAutos,`Volkswagen`);
+registro.todo(listadoAutos);
+

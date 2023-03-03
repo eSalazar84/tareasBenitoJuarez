@@ -6,19 +6,19 @@ Implementar en TypeScript*/
 export class Auto {
   // estado de la clase: variables
   brand: string;
-  private model:string;
+  private model: string;
   private currentSpeed: number;
-  private year:number;
+  private year: number;
   private isOn: boolean;
   private fuel: number;
   // constructor de la clase
-  constructor(brand: string, model:string, year?:number) {
-    this.brand = brand
-    this.model = model
-    year ? (this.year = year):(this.year = 2022);
+  constructor(brand: string, model: string, year?: number) {
+    this.brand = brand;
+    this.model = model;
+    year ? (this.year = year) : (this.year = Math.floor(Math.random()*(2023-1980)+1980));
     this.currentSpeed=0;
-    this.isOn=false;
-    this.fuel=20;
+    this.isOn=Math.random() >= 0.5;
+    this.fuel= Math.floor(Math.random()*(100-10)+10);
   }
   // funcionalidades de la clase: funciones
   switchOnOff(): void {
@@ -69,4 +69,3 @@ peugeot.speedDown();
 console.log(peugeot);
 console.log(ford);
 console.log(fiat); */
-

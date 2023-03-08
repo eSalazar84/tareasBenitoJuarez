@@ -20,5 +20,8 @@
     "array-sum": "^1.0.0",
     "count-words-array": "^1.0.13",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6"
   }
 }

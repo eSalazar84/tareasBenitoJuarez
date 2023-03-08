@@ -2,41 +2,31 @@
 Implementar la clase Matriz. En vez de consultar los valores con los corchetes, 
 se debe hacer (desde afuera) a través de un método → get(x, y) */
 
-import { arch } from "os";
-
 export class Matrix {
-  private elementXaxis: number;
-  private elementYaxis: number;
-  private arregloMatriz:number[][];
-  constructor(elementXaxis: number, elementYaxis: number,arregloMatriz?:number[][]) {
-    this.elementXaxis = elementXaxis;
-    this.elementYaxis = elementYaxis;
-    arregloMatriz ? (this.arregloMatriz=arregloMatriz):(this.arregloMatriz=[])
+  private elementosEjeX: number;
+  private elementosEjeY: number;
+  constructor(elemEjeX: number, elemEjeY: number) {
+    this.elementosEjeX = elemEjeX;
+    this.elementosEjeY = elemEjeY;
   }
-  createMatrix(): number[][] {
-    for (let i = 0; i < this.elementXaxis; i++) {
-      for (let j = 0; j < this.elementYaxis; j++) {
-        this.arregloMatriz[i][j] = Math.floor(Math.random() * (100 - 1) + 1);
+  getValue(x: number, y: number): string {
+    if (x > this.elementosEjeX || y > this.elementosEjeY) {
+      return `Los valores estan por fuera de la Matriz, intente con otros valores`;
+    } else {
+      let mtrx: number[][] = [[]];
+      for (let i = 1; i <= this.elementosEjeX; i++) {
+        if (i >= 0) mtrx.push([]);
+        for (let j = 1; j <= this.elementosEjeY; j++) {
+          mtrx[i][j] = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+        }
       }
+      console.table(mtrx);
+      return `El valor en la Matriz posicion [x:${x} ; y:${y}] es ${mtrx[x][y]}`;
     }
-    return this.arregloMatriz;
   }
-  /* showMatrix():void{
-    let mostrarMatriz:number[][]=[];
-    for (let i = 0; i < this.elementXaxis; i++) {
-      for (let j = 0; j < this.elementYaxis; j++) {
-        mostrarMatriz=this.arregloMatriz[i][j]
-      }
-      console.log(mostrarMatriz);
-      
-    }
-
-
-  } */
 }
 
-const matrix_ejemplo: Matrix = new Matrix(5, 6);
-matrix_ejemplo.createMatrix();
-console.table(matrix_ejemplo.createMatrix());
+const matrix_ejemplo: Matrix = new Matrix(8, 6);
+console.log(matrix_ejemplo.getValue(7,5));
 
-//EJERCICIO SIN TERMINAR
+

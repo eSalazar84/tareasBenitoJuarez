@@ -6,3 +6,7 @@ sistema educativo donde:
 si está aprobado o no (es decir si la nota es mayor que 7). 
 • La escuela debe tener un registro de los alumnos y maestros, y debe poder 
 matricular/contratar y expulsar/despedir a los mismos. */
+
+//Sistema Educativo -> Escuelas -> Docentes -> Alumnos
+
+

@@ -3,10 +3,10 @@ export class Alumnos{
     private lastName:string;
     private age:number;
     private filePersonal:string;
-    constructor(nameUser:string,lastNameUser:string,ageUser:number){
-        this.name=nameUser;
-        this.lastName=lastNameUser;
-        this.age=ageUser;
+    constructor(){
+        this.name=`undefined`;
+        this.lastName=`undefined`;
+        
+        this.age=15;
     }
-    add
 }

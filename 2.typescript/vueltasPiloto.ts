@@ -2,7 +2,8 @@
 Se necesita un programa que permita ingresar por teclado el tiempo de cada vuelta
 El programa debe retornar el tiempo total y el promedio de vuelta */
 
-const readlineSync=require(`readline-sync`);
+import fs from "fs";
+const readlineSync = require(`readlineSync`);
 
 function countingLaps():string{
     let timeLap:number=0;

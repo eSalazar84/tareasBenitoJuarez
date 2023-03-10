@@ -9,7 +9,7 @@ matricular/contratar y expulsar/despedir a los mismos. */
 
 //Sistema Educativo -> Escuelas -> Docentes -> Alumnos
 
-import * as fs from "fs";
+import fs from "fs";
 import { Alumnos } from "./alumnos";
 import { Docentes } from "./docentes";
 import { Escuela } from "./escuela";
@@ -56,7 +56,7 @@ fs.writeFileSync(`./data_base/listadoAlumnos.json`, archiveAlumnos, `utf8`);
 const docente_1: Alumnos = new Alumnos(`Maria`, `Flores`);
 const docente_2: Alumnos = new Alumnos(`Silvia`, `Miguelez`);
 const docente_3: Alumnos = new Alumnos(`Marily`, `Lopez`);
-const docente_4: Alumnos = new Alumnos(`Paola`, `Menna`);
+const docente_4: Alumnos = new Alumnos(`Paola`, `Menta`);
 
 const listDocentes = [docente_1, docente_2, docente_3, docente_4];
 const archiveDocentes = JSON.stringify(listDocentes);
@@ -80,6 +80,9 @@ console.table(docente_5.mostrarListado(listAlumnos));
 console.table(docente_5.mostrarListado(listDocentes));
 console.log(docente_5);
 
-
 alumno_14.showNotes();
 console.log(alumno_14.showNotes());
+
+//docente_5.asignarAlumnos(listAlumnos);
+console.table(docente_5.asignarAlumnos(listAlumnos, 13));
+

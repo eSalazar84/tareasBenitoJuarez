@@ -1,8 +1,8 @@
 export class Alumnos {
-  name: string;
-  lastName: string;
-  tipo: string;
-  age: number;
+  private name: string;
+  protected lastName: string;
+  protected tipo: string;
+  public age: number;
   constructor(name: string, lastname: string, age?: number) {
     this.name = name;
     this.lastName = lastname;

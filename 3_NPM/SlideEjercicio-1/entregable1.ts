@@ -2,7 +2,7 @@
 Editar el ejercicio de la suma los elementos de un arreglo, inicializando el mismo con un archivo .txt
 Subir a GitHub y pasar el link por Slack */
 
-import * as fs from "fs";
+import fs from "fs";
 
 const arraySum = require(`array-sum`);
 const archivoArreglo: string = fs.readFileSync(`./entregable1.txt`, `utf-8`);

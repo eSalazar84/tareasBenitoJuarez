@@ -74,15 +74,7 @@ const listadoDocentes = fs.readFileSync(
   `utf8`
 );
 
-const docente_5: Docentes = new Docentes(`Emilia`, `Paredes`);
-docente_5.mostrarListado(listAlumnos);
-console.table(docente_5.mostrarListado(listAlumnos));
-console.table(docente_5.mostrarListado(listDocentes));
-console.log(docente_5);
+const escuelaN_1:Escuela=new Escuela();
 
-alumno_14.showNotes();
-console.log(alumno_14.showNotes());
-
-//docente_5.asignarAlumnos(listAlumnos);
-console.table(docente_5.asignarAlumnos(listAlumnos, 13));
-
+escuelaN_1.mostrarListado(listAlumnos);
+console.table(escuelaN_1.mostrarListado(listAlumnos));

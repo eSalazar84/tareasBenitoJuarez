@@ -3,7 +3,7 @@ export class Alumnos {
   protected lastName: string;
   protected tipo: string;
   public age: number;
-  constructor(name: string, lastname: string, age?: number) {
+  constructor(name: string, lastname: string, age?: number,file?:number) {
     this.name = name;
     this.lastName = lastname;
     age

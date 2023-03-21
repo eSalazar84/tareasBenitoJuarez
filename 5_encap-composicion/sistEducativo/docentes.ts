@@ -12,3 +12,7 @@ export class Docentes extends Alumnos {
     return alumnosAsignados;
   }
 }
+
+const docente23424=new Docentes(`sadfsd`,`asfasdf`)
+console.log(docente23424);
+

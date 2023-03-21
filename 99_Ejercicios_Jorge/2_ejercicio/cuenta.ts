@@ -13,20 +13,26 @@ negativa, no se hará nada.
 rojos.
 */
 
-export class Cuenta{
-    private titular:string;
-    private cantidad:number;
-    constructor(titular:string, cantidad?:number){
-        this.titular=titular;
-        cantidad?(this.cantidad==cantidad):(this.cantidad=Math.floor(Math.random()* (10000-0)+0))
-    }
-    getInfo():string{
-        return`
-        Titular de la cuenta:.${this.titular}
-        Saldo :...............${this.cantidad}
-        `
-    }
-    setInsertAmount():string{
-        
-    }
+export class Cuenta {
+  private titular: string;
+  private cantidad: number;
+  constructor(titular: string, cantidad?: number) {
+    this.titular = titular;
+    cantidad
+      ? (this.cantidad = cantidad)
+      : (this.cantidad = Math.floor(Math.random() * (10000 - 0) + 0));
+  }
+  getCantidad(cantidad:number):string{
+    return cantidad.toPrecision(2)
+  }
+  getInfo(): string {
+    return `
+        Titular de la cuenta:....${this.titular}
+        Saldo :................. $${this.cantidad}.-
+        `;
+  }
+  setInsertAmount(cantidad: number) {
+    if (cantidad >= 0) return this.cantidad;
+  }
+  setWithDrawMoney(cantidad: number) {}
 }

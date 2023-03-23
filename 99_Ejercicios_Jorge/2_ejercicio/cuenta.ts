@@ -16,23 +16,40 @@ rojos.
 export class Cuenta {
   private titular: string;
   private cantidad: number;
+  private accum:number;
   constructor(titular: string, cantidad?: number) {
     this.titular = titular;
     cantidad
       ? (this.cantidad = cantidad)
       : (this.cantidad = Math.floor(Math.random() * (10000 - 0) + 0));
+    this.accum=0;
   }
   getCantidad(cantidad:number):string{
-    return cantidad.toPrecision(2)
+    return cantidad.toFixed(2)
   }
   getInfo(): string {
     return `
         Titular de la cuenta:....${this.titular}
-        Saldo :................. $${this.cantidad}.-
+        Saldo :................. $${this.getCantidad(this.cantidad)}.-
         `;
   }
-  setInsertAmount(cantidad: number) {
-    if (cantidad >= 0) return this.cantidad;
+  setInsertAmount(cantidad: number):string {
+   
+    if (cantidad >= 0) {
+      this.accum=cantidad+this.cantidad
+      return `
+          Titular de la cuenta:....${this.titular}
+          Saldo :................. $${this.getCantidad(this.accum)}.-      
+      `
+    } else {
+      return `Ha ingresado mal el importe, intente nuevamente.`
+    }
   }
-  setWithDrawMoney(cantidad: number) {}
+  setWithDrawMoney(cantidad: number):string {
+    this.accum=this.cantidad-cantidad
+      return `
+          Titular de la cuenta:....${this.titular}
+          Saldo :................. $${this.getCantidad(this.accum)}.-      
+      `
+  }
 }
